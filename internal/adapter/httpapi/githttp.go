@@ -7,8 +7,8 @@ import (
 	"sync"
 	"time"
 
-	"github.com/magomedcoder/kwiki/internal/domain"
-	"github.com/magomedcoder/kwiki/internal/usecase"
+	"github.com/gitwold/gwiki/internal/domain"
+	"github.com/gitwold/gwiki/internal/usecase"
 )
 
 type GitBackend interface {
@@ -75,13 +75,13 @@ func (h *Handler) gitHTTP(w http.ResponseWriter, r *http.Request) {
 
 	actor, err := h.gitActor(r)
 	if err != nil {
-		w.Header().Set("WWW-Authenticate", `Basic realm="KWiki git"`)
+		w.Header().Set("WWW-Authenticate", `Basic realm="GWiki git"`)
 		http.Error(w, "auth required", http.StatusUnauthorized)
 		return
 	}
 
 	if actor.Email == "" {
-		w.Header().Set("WWW-Authenticate", `Basic realm="KWiki git"`)
+		w.Header().Set("WWW-Authenticate", `Basic realm="GWiki git"`)
 		http.Error(w, "auth required", http.StatusUnauthorized)
 		return
 	}

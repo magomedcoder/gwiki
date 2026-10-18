@@ -11,10 +11,10 @@ import (
 	"strings"
 	"time"
 
-	"github.com/magomedcoder/kwiki/internal/adapter/i18n"
-	"github.com/magomedcoder/kwiki/internal/domain"
-	"github.com/magomedcoder/kwiki/internal/usecase"
-	"github.com/magomedcoder/kwiki/resources"
+	"github.com/gitwold/gwiki/internal/adapter/i18n"
+	"github.com/gitwold/gwiki/internal/domain"
+	"github.com/gitwold/gwiki/internal/usecase"
+	"github.com/gitwold/gwiki/resources"
 )
 
 type Wiki interface {

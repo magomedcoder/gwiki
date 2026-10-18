@@ -7,8 +7,8 @@ import (
 	"testing"
 	"time"
 
-	"github.com/magomedcoder/kwiki/internal/domain"
-	"github.com/magomedcoder/kwiki/internal/usecase"
+	"github.com/gitwold/gwiki/internal/domain"
+	"github.com/gitwold/gwiki/internal/usecase"
 )
 
 func TestComponentsKeepMarkup(t *testing.T) {

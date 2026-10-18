@@ -5,8 +5,8 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/magomedcoder/kwiki/internal/domain"
-	"github.com/magomedcoder/kwiki/internal/usecase"
+	"github.com/gitwold/gwiki/internal/domain"
+	"github.com/gitwold/gwiki/internal/usecase"
 )
 
 func TestEditShowsLivePreview(t *testing.T) {

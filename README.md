@@ -1,17 +1,15 @@
-# KWiki - a lightweight Git-backed wiki
+# GWiki - a lightweight Git-backed wiki
 
-[Русская версия](README-ru.md)
-
-Latest Linux build: [download kwiki](https://github.com/magomedcoder/KWiki/releases/latest/download/kwiki).
+Latest Linux build: [download gwiki](https://github.com/gitwold/gwiki/releases/latest/download/gwiki).
 
 ```bash
-chmod +x kwiki
+chmod +x gwiki
 ```
 
 ## Server
 
 ```bash
-./kwiki -data ./data -addr :8000 -pepper 'long-secret' -secure
+./gwiki -data ./data -addr :8000 -pepper 'long-secret' -secure
 ```
 
 | Flag      | Default     | Purpose                                                        |
@@ -31,15 +29,15 @@ Set the password with `-password`. If the flag is empty, it is read hidden from 
 The first user becomes an administrator. `-admin` also makes later users administrators.
 
 ```bash
-./kwiki user add -data ./data -email kwiki@example.com -name KWiki -surname KWiki -password 'S3cure-Wiki-Pass' -pepper 'long-secret' -admin
+./gwiki user add -data ./data -email gwiki@example.com -name GWiki -surname GWiki -password 'S3cure-Wiki-Pass' -pepper 'long-secret' -admin
 
-./kwiki user passwd -data ./data -email kwiki@example.com -password 'N3w-Wiki-Password' -pepper 'long-secret'
+./gwiki user passwd -data ./data -email gwiki@example.com -password 'N3w-Wiki-Password' -pepper 'long-secret'
 
-./kwiki user block -data ./data -email editor@example.com
+./gwiki user block -data ./data -email editor@example.com
 
-./kwiki user unblock -data ./data -email editor@example.com
+./gwiki user unblock -data ./data -email editor@example.com
 
-./kwiki user delete -data ./data -email editor@example.com
+./gwiki user delete -data ./data -email editor@example.com
 ```
 
 | Command        | Flags                                                              |
@@ -57,14 +55,14 @@ The first user becomes an administrator. `-admin` also makes later users adminis
 ## Docker
 
 ```bash
-docker build -t kwiki .
-docker run -p 8000:8000 -v kwiki-data:/var/lib/data kwiki -pepper 'long-secret'
+docker build -t gwiki .
+docker run -p 8000:8000 -v gwiki-data:/var/lib/data gwiki -pepper 'long-secret'
 ```
 
-Data lives in the `kwiki-data` volume. First user:
+Data lives in the `gwiki-data` volume. First user:
 
 ```bash
-docker run --rm -v kwiki-data:/var/lib/data kwiki user add -data ./data -email kwiki@example.com -name KWiki -surname KWiki -password 'S3cure-Wiki-Pass' -pepper 'long-secret' -admin
+docker run --rm -v gwiki-data:/var/lib/data gwiki user add -data ./data -email gwiki@example.com -name GWiki -surname GWiki -password 'S3cure-Wiki-Pass' -pepper 'long-secret' -admin
 ```
 
 ---
@@ -76,7 +74,7 @@ Requires Go 1.27, Node.js 22, and Yarn 1.22.
 ```bash
 yarn
 yarn build:css
-go build -o build/kwiki ./cmd/kwiki
+go build -o build/gwiki ./cmd/gwiki
 ```
 
 `yarn build:css` must run before `go build`

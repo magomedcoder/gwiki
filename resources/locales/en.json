@@ -82,10 +82,10 @@
   "page.public_catalog_desc": "Public wiki pages",
 
   "help.title": "How to write Markdown",
-  "help.intro": "Markdown is a simple way to format text with a few characters. Below is everything KWiki understands. On the left is what you type, on the right is how it looks on the page.",
+  "help.intro": "Markdown is a simple way to format text with a few characters. Below is everything GWiki understands. On the left is what you type, on the right is how it looks on the page.",
   "help.write": "You write",
   "help.see": "You see",
-  "help.limits": "KWiki does not process nested lists, raw HTML, or line breaks made with two spaces. You can combine marks on one line. Branch files, upload, and git clone/push are in the Files section.",
+  "help.limits": "GWiki does not process nested lists, raw HTML, or line breaks made with two spaces. You can combine marks on one line. Branch files, upload, and git clone/push are in the Files section.",
 
   "help.headings.title": "Headings",
   "help.headings.lead": "More hash marks make a smaller heading. Use one to six. Put them at the start of the line, then a space.",

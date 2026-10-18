@@ -7,15 +7,15 @@ import (
 	"net/http"
 	"os"
 
-	"github.com/magomedcoder/kwiki/internal/adapter/git"
-	"github.com/magomedcoder/kwiki/internal/adapter/html"
-	"github.com/magomedcoder/kwiki/internal/adapter/httpapi"
-	"github.com/magomedcoder/kwiki/internal/adapter/i18n"
-	"github.com/magomedcoder/kwiki/internal/adapter/password"
-	"github.com/magomedcoder/kwiki/internal/adapter/sqlite"
-	"github.com/magomedcoder/kwiki/internal/domain"
-	"github.com/magomedcoder/kwiki/internal/usecase"
-	"github.com/magomedcoder/kwiki/resources"
+	"github.com/gitwold/gwiki/internal/adapter/git"
+	"github.com/gitwold/gwiki/internal/adapter/html"
+	"github.com/gitwold/gwiki/internal/adapter/httpapi"
+	"github.com/gitwold/gwiki/internal/adapter/i18n"
+	"github.com/gitwold/gwiki/internal/adapter/password"
+	"github.com/gitwold/gwiki/internal/adapter/sqlite"
+	"github.com/gitwold/gwiki/internal/domain"
+	"github.com/gitwold/gwiki/internal/usecase"
+	"github.com/gitwold/gwiki/resources"
 )
 
 func main() {
@@ -76,7 +76,7 @@ func main() {
 	if n, err := auth.UserCount(context.Background()); err != nil {
 		log.Fatalf("пользователи: %v", err)
 	} else if n == 0 {
-		log.Printf("нет пользователей: kwiki user add -data %s -email kwiki@example.com -name Имя -surname Фамилия", paths.Root)
+		log.Printf("нет пользователей: gwiki user add -data %s -email gwiki@example.com -name Имя -surname Фамилия", paths.Root)
 	}
 
 	bundle, err := i18n.LoadWithDefault(resources.FS, defaultLang)
@@ -101,7 +101,7 @@ func main() {
 	if !*secure {
 		log.Printf("куки сессии без постоянной защиты: для защищённого соединения укажите -secure")
 	}
-	log.Printf("KWiki запущен на %s (каталог %s, язык %s)", *addr, paths.Root, bundle.Default())
+	log.Printf("GWiki запущен на %s (каталог %s, язык %s)", *addr, paths.Root, bundle.Default())
 	log.Fatal(http.ListenAndServe(*addr, handler.Protect(handler.WithLang(mux))))
 }
 

@@ -1,4 +1,4 @@
-module github.com/magomedcoder/kwiki
+module github.com/gitwold/gwiki
 
 go 1.27.1
 

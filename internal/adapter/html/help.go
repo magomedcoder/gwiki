@@ -4,8 +4,8 @@ import (
 	"html/template"
 	"net/http"
 
-	"github.com/magomedcoder/kwiki/internal/adapter/markdown"
-	"github.com/magomedcoder/kwiki/internal/usecase"
+	"github.com/gitwold/gwiki/internal/adapter/markdown"
+	"github.com/gitwold/gwiki/internal/usecase"
 )
 
 type helpItem struct {
@@ -64,7 +64,7 @@ func (r *Renderer) helpItems(lang string) []helpItem {
 		live("emphasis", "help.emphasis", t("help.emphasis.sample")),
 		live("strike", "help.strike", t("help.strike.sample")),
 		live("inline-code", "help.inline_code", t("help.inline_code.sample")),
-		live("code-block", "help.code_block", "```\nkwiki -data ./data\n```"),
+		live("code-block", "help.code_block", "```\ngwiki -data ./data\n```"),
 		live("lists", "help.lists", "- "+t("help.lists.a")+"\n- "+t("help.lists.b")+"\n* "+t("help.lists.c")),
 		live("ordered", "help.ordered", "1. "+t("help.ordered.a")+"\n2. "+t("help.ordered.b")+"\n3. "+t("help.ordered.c")),
 		live("quote", "help.quote", "> "+t("help.quote.a")+"\n> "+t("help.quote.b")),

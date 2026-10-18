@@ -7,7 +7,7 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/magomedcoder/kwiki/internal/usecase"
+	"github.com/gitwold/gwiki/internal/usecase"
 )
 
 func TestFilesPageRequiresAuth(t *testing.T) {
@@ -26,7 +26,7 @@ func TestFilesPageRequiresAuth(t *testing.T) {
 	mux = http.NewServeMux()
 	h.Register(mux)
 	req := httptest.NewRequest(http.MethodGet, "/b/docs/files", nil)
-	req.AddCookie(&http.Cookie{Name: "kwiki_session", Value: "session"})
+	req.AddCookie(&http.Cookie{Name: "gwiki_session", Value: "session"})
 	rec = httptest.NewRecorder()
 	h.Protect(mux).ServeHTTP(rec, req)
 	if rec.Code != http.StatusOK || !strings.Contains(rec.Body.String(), "files-ok") {
@@ -43,7 +43,7 @@ func TestFilesCreateRequiresCSRF(t *testing.T) {
 	form := url.Values{"action": {"create"}, "name": {"a.md"}, "content": {"x"}, "csrf": {"bad"}}
 	req := httptest.NewRequest(http.MethodPost, "/files", strings.NewReader(form.Encode()))
 	req.Header.Set("Content-Type", "application/x-www-form-urlencoded")
-	req.AddCookie(&http.Cookie{Name: "kwiki_session", Value: "session"})
+	req.AddCookie(&http.Cookie{Name: "gwiki_session", Value: "session"})
 	rec := httptest.NewRecorder()
 	h.Protect(mux).ServeHTTP(rec, req)
 	if rec.Code != http.StatusForbidden {

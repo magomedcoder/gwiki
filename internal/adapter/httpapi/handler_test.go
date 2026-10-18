@@ -8,10 +8,10 @@ import (
 	"testing"
 	"time"
 
-	"github.com/magomedcoder/kwiki/internal/adapter/i18n"
-	"github.com/magomedcoder/kwiki/internal/domain"
-	"github.com/magomedcoder/kwiki/internal/usecase"
-	"github.com/magomedcoder/kwiki/resources"
+	"github.com/gitwold/gwiki/internal/adapter/i18n"
+	"github.com/gitwold/gwiki/internal/domain"
+	"github.com/gitwold/gwiki/internal/usecase"
+	"github.com/gitwold/gwiki/resources"
 )
 
 func TestAnonymousRedirectAndSecureCookie(t *testing.T) {
@@ -57,7 +57,7 @@ func TestAnonymousRedirectAndSecureCookie(t *testing.T) {
 	}
 
 	c := cookies[0]
-	if c.Name != "__Host-kwiki_session" || !c.HttpOnly || !c.Secure || c.SameSite != http.SameSiteStrictMode {
+	if c.Name != "__Host-gwiki_session" || !c.HttpOnly || !c.Secure || c.SameSite != http.SameSiteStrictMode {
 		t.Fatalf("кука %+v", c)
 	}
 
@@ -68,7 +68,7 @@ func TestAnonymousRedirectAndSecureCookie(t *testing.T) {
 	body := "email=admin@example.com&password=secret&csrf=csrf-token&next=https://evil.example"
 	req := httptest.NewRequest(http.MethodPost, "/login", strings.NewReader(body))
 	req.Header.Set("Content-Type", "application/x-www-form-urlencoded")
-	req.AddCookie(&http.Cookie{Name: "__Host-kwiki_session", Value: "challenge-token"})
+	req.AddCookie(&http.Cookie{Name: "__Host-gwiki_session", Value: "challenge-token"})
 	rec = httptest.NewRecorder()
 	srv.ServeHTTP(rec, req)
 	if rec.Code != http.StatusSeeOther || rec.Header().Get("Location") != "/" {
@@ -86,7 +86,7 @@ func TestEditRequiresCSRF(t *testing.T) {
 	req := httptest.NewRequest(http.MethodPost, "/edit", strings.NewReader("slug=home&content=text"))
 	req.Header.Set("Content-Type", "application/x-www-form-urlencoded")
 	req.AddCookie(&http.Cookie{
-		Name:  "kwiki_session",
+		Name:  "gwiki_session",
 		Value: "session-token",
 	})
 	rec := httptest.NewRecorder()
@@ -375,7 +375,7 @@ func TestEditPreviewRequiresCSRF(t *testing.T) {
 
 	req := httptest.NewRequest(http.MethodPost, "/edit/preview", strings.NewReader("content=%23+Hi"))
 	req.Header.Set("Content-Type", "application/x-www-form-urlencoded")
-	req.AddCookie(&http.Cookie{Name: "kwiki_session", Value: "session-token"})
+	req.AddCookie(&http.Cookie{Name: "gwiki_session", Value: "session-token"})
 	rec := httptest.NewRecorder()
 	srv.ServeHTTP(rec, req)
 	if rec.Code != http.StatusForbidden || view.previewed != "" {
@@ -384,7 +384,7 @@ func TestEditPreviewRequiresCSRF(t *testing.T) {
 
 	req = httptest.NewRequest(http.MethodPost, "/edit/preview", strings.NewReader("csrf=session-csrf&content=%23+Hi"))
 	req.Header.Set("Content-Type", "application/x-www-form-urlencoded")
-	req.AddCookie(&http.Cookie{Name: "kwiki_session", Value: "session-token"})
+	req.AddCookie(&http.Cookie{Name: "gwiki_session", Value: "session-token"})
 	rec = httptest.NewRecorder()
 	srv.ServeHTTP(rec, req)
 	if rec.Code != http.StatusOK || view.previewed != "# Hi" {
@@ -567,7 +567,7 @@ func TestChangePasswordClearsSession(t *testing.T) {
 	mismatch := httptest.NewRequest(http.MethodPost, "/account/password", strings.NewReader("csrf=session-csrf&current_password=old&password=N3w-Wiki-Password&password_confirm=other"))
 	mismatch.Header.Set("Content-Type", "application/x-www-form-urlencoded")
 	mismatch.AddCookie(&http.Cookie{
-		Name:  "kwiki_session",
+		Name:  "gwiki_session",
 		Value: "session-token",
 	})
 	rec := httptest.NewRecorder()
@@ -579,7 +579,7 @@ func TestChangePasswordClearsSession(t *testing.T) {
 	ok := httptest.NewRequest(http.MethodPost, "/account/password", strings.NewReader("csrf=session-csrf&current_password=old&password=N3w-Wiki-Password&password_confirm=N3w-Wiki-Password"))
 	ok.Header.Set("Content-Type", "application/x-www-form-urlencoded")
 	ok.AddCookie(&http.Cookie{
-		Name:  "kwiki_session",
+		Name:  "gwiki_session",
 		Value: "session-token",
 	})
 	rec = httptest.NewRecorder()

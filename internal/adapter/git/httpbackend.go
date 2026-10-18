@@ -6,12 +6,12 @@ import (
 	"net/http"
 	"strings"
 
+	"github.com/gitwold/gwiki/internal/domain"
 	"github.com/go-git/go-git/v6/plumbing"
 	"github.com/go-git/go-git/v6/plumbing/object"
 	"github.com/go-git/go-git/v6/plumbing/storer"
 	"github.com/go-git/go-git/v6/plumbing/transport"
 	"github.com/go-git/go-git/v6/storage"
-	"github.com/magomedcoder/kwiki/internal/domain"
 )
 
 type HTTPBackend struct {
@@ -104,13 +104,13 @@ func (b *HTTPBackend) CloneURL(r *http.Request, secure bool) string {
 	return fmt.Sprintf("%s://%s/git", scheme, host)
 }
 
-type nopCloser struct{ 
-	io.Writer 
+type nopCloser struct {
+	io.Writer
 }
 
 func (nopCloser) Close() error {
-	 return nil 
-	}
+	return nil
+}
 
 type ffStorer struct {
 	storage.Storer

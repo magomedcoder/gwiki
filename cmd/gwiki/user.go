@@ -9,9 +9,9 @@ import (
 	"os"
 	"strings"
 
-	"github.com/magomedcoder/kwiki/internal/adapter/sqlite"
-	"github.com/magomedcoder/kwiki/internal/domain"
-	"github.com/magomedcoder/kwiki/internal/usecase"
+	"github.com/gitwold/gwiki/internal/adapter/sqlite"
+	"github.com/gitwold/gwiki/internal/domain"
+	"github.com/gitwold/gwiki/internal/usecase"
 	"golang.org/x/term"
 )
 

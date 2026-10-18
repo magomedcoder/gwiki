@@ -10,9 +10,9 @@ import (
 
 func cookieName(secure bool) string {
 	if secure {
-		return "__Host-kwiki_session"
+		return "__Host-gwiki_session"
 	}
-	return "kwiki_session"
+	return "gwiki_session"
 }
 
 func (h *Handler) setCookie(w http.ResponseWriter, r *http.Request, token string, exp time.Time) {

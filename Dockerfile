@@ -23,24 +23,24 @@ RUN go mod download
 COPY . .
 COPY --from=css /src/resources/css/tailwindcss.css ./resources/css/tailwindcss.css
 
-RUN CGO_ENABLED=1 go build -o /out/kwiki ./cmd/kwiki
+RUN CGO_ENABLED=1 go build -o /out/gwiki ./cmd/gwiki
 
 FROM alpine:3.24
 
 RUN apk add --no-cache ca-certificates \
-    && adduser -D -H -u 65532 kwiki \
+    && adduser -D -H -u 65532 gwiki \
     && mkdir -p /var/lib/data \
-    && chown kwiki:kwiki /var/lib/data
+    && chown gwiki:gwiki /var/lib/data
 
 WORKDIR /var/lib
 
-COPY --from=builder /out/kwiki /usr/local/bin/kwiki
+COPY --from=builder /out/gwiki /usr/local/bin/gwiki
 
-USER kwiki
+USER gwiki
 
 EXPOSE 8000
 
 VOLUME ["/var/lib/data"]
 
-ENTRYPOINT ["kwiki"]
+ENTRYPOINT ["gwiki"]
 CMD ["-addr", ":8000"]

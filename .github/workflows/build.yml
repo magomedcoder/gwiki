@@ -28,11 +28,11 @@ jobs:
           npm install -g yarn@1.22.22
           yarn install --frozen-lockfile
           yarn build:css
-          CGO_ENABLED=1 go build -o kwiki ./cmd/kwiki
+          CGO_ENABLED=1 go build -o gwiki ./cmd/gwiki
 
       - name: Upload Release to GitHub
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
           gh release delete latest --yes --cleanup-tag || true
-          gh release create latest kwiki  --title "Latest build" --notes "Build main ${GITHUB_SHA}" --latest
+          gh release create latest gwiki --title "Latest build" --notes "Build main ${GITHUB_SHA}" --latest

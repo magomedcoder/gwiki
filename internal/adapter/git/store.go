@@ -11,10 +11,10 @@ import (
 	"sync"
 	"time"
 
+	"github.com/gitwold/gwiki/internal/domain"
 	"github.com/go-git/go-git/v6"
 	"github.com/go-git/go-git/v6/plumbing"
 	"github.com/go-git/go-git/v6/plumbing/object"
-	"github.com/magomedcoder/kwiki/internal/domain"
 )
 
 type Store struct {
@@ -129,7 +129,7 @@ func ensureInitialCommit(repo *git.Repository, root string) error {
 	_, err = wt.Commit("начальный коммит", &git.CommitOptions{
 		Author: &object.Signature{
 			Name:  "система",
-			Email: "kwiki@localhost",
+			Email: "gwiki@localhost",
 			When:  time.Now(),
 		},
 	})
@@ -645,7 +645,7 @@ func (s *Store) commit(wt *git.Worktree, message string) error {
 	_, err := wt.Commit(message, &git.CommitOptions{
 		Author: &object.Signature{
 			Name:  "система",
-			Email: "kwiki@localhost",
+			Email: "gwiki@localhost",
 			When:  time.Now(),
 		},
 	})

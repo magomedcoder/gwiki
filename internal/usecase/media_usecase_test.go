@@ -7,7 +7,7 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/magomedcoder/kwiki/internal/domain"
+	"github.com/gitwold/gwiki/internal/domain"
 )
 
 func TestMediaStageSaveAndDelete(t *testing.T) {

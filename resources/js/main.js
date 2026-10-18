@@ -1,5 +1,5 @@
 (function () {
-  const i18nNode = document.getElementById("kwiki-i18n");
+  const i18nNode = document.getElementById("gwiki-i18n");
   let messages = {};
   if (i18nNode && i18nNode.textContent) {
     try {
@@ -18,8 +18,8 @@
     }
     return out;
   }
-  window.kwikiT = t;
-  window.kwikiTf = tf;
+  window.gwikiT = t;
+  window.gwikiTf = tf;
 
   function openDialog(id) {
     const dialog = document.getElementById(id);
@@ -175,8 +175,8 @@
 })();
 
 (function () {
-  const t = window.kwikiT || function (key) { return key; };
-  const tf = window.kwikiTf || function (key) { return key; };
+  const t = window.gwikiT || function (key) { return key; };
+  const tf = window.gwikiTf || function (key) { return key; };
   const form = document.querySelector("form.editor");
   if (!form) {
     return;

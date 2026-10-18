@@ -8,7 +8,7 @@ import (
 	"strings"
 	"sync"
 
-	"github.com/magomedcoder/kwiki/internal/domain"
+	"github.com/gitwold/gwiki/internal/domain"
 )
 
 type mediaStaging struct {

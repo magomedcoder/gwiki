@@ -1,17 +1,15 @@
-# KWiki - лёгкая система для ведения вики на базе Git
+# GWiki - лёгкая система для ведения вики на базе Git
 
-[English version](README.md)
-
-Последняя сборка для Linux: [скачать kwiki](https://github.com/magomedcoder/KWiki/releases/latest/download/kwiki).
+Последняя сборка для Linux: [скачать gwiki](https://github.com/gitwold/gwiki/releases/latest/download/gwiki).
 
 ```bash
-chmod +x kwiki
+chmod +x gwiki
 ```
 
 ## Сервер
 
 ```bash
-./kwiki -data ./data -addr :8000 -pepper 'длинный-секрет' -secure
+./gwiki -data ./data -addr :8000 -pepper 'длинный-секрет' -secure
 ```
 
 | Флаг      | По умолчанию | Назначение                                                      |
@@ -31,15 +29,15 @@ chmod +x kwiki
 Первый пользователь становится администратором. Флаг `-admin` делает администратором и следующих.
 
 ```bash
-./kwiki user add -data ./data -email kwiki@example.com -name KWiki -surname KWiki -password 'S3cure-Wiki-Pass' -pepper 'длинный-секрет' -admin
+./gwiki user add -data ./data -email gwiki@example.com -name GWiki -surname GWiki -password 'S3cure-Wiki-Pass' -pepper 'длинный-секрет' -admin
 
-./kwiki user passwd -data ./data -email kwiki@example.com -password 'N3w-Wiki-Password' -pepper 'длинный-секрет'
+./gwiki user passwd -data ./data -email gwiki@example.com -password 'N3w-Wiki-Password' -pepper 'длинный-секрет'
 
-./kwiki user block -data ./data -email editor@example.com
+./gwiki user block -data ./data -email editor@example.com
 
-./kwiki user unblock -data ./data -email editor@example.com
+./gwiki user unblock -data ./data -email editor@example.com
 
-./kwiki user delete -data ./data -email editor@example.com
+./gwiki user delete -data ./data -email editor@example.com
 ```
 
 | Команда        | Флаги                                                              |
@@ -57,14 +55,14 @@ chmod +x kwiki
 ## Docker
 
 ```bash
-docker build -t kwiki .
-docker run -p 8000:8000 -v kwiki-data:/var/lib/data kwiki -pepper 'длинный-секрет'
+docker build -t gwiki .
+docker run -p 8000:8000 -v gwiki-data:/var/lib/data gwiki -pepper 'длинный-секрет'
 ```
 
-Данные в томе `kwiki-data`. Первый пользователь:
+Данные в томе `gwiki-data`. Первый пользователь:
 
 ```bash
-docker run --rm -v kwiki-data:/var/lib/data kwiki user add -data ./data -email kwiki@example.com -name KWiki -surname KWiki -password 'S3cure-Wiki-Pass' -pepper 'длинный-секрет' -admin
+docker run --rm -v gwiki-data:/var/lib/data gwiki user add -data ./data -email gwiki@example.com -name GWiki -surname GWiki -password 'S3cure-Wiki-Pass' -pepper 'длинный-секрет' -admin
 ```
 
 ---
@@ -76,7 +74,7 @@ docker run --rm -v kwiki-data:/var/lib/data kwiki user add -data ./data -email k
 ```bash
 yarn
 yarn build:css
-go build -o build/kwiki ./cmd/kwiki
+go build -o build/gwiki ./cmd/gwiki
 ```
 
 `yarn build:css` нужен до `go build`

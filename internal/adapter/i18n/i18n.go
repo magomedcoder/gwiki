@@ -12,7 +12,7 @@ import (
 
 const (
 	DefaultLang = "ru"
-	LangCookie  = "kwiki_lang"
+	LangCookie  = "gwiki_lang"
 )
 
 type Bundle struct {

@@ -7,8 +7,8 @@ import (
 	"net/http"
 	"strings"
 
-	"github.com/magomedcoder/kwiki/internal/domain"
-	"github.com/magomedcoder/kwiki/internal/usecase"
+	"github.com/gitwold/gwiki/internal/domain"
+	"github.com/gitwold/gwiki/internal/usecase"
 )
 
 const fileFormMemory = domain.MaxFileBytes + 64<<10
@@ -162,7 +162,7 @@ func (h *Handler) fileBranches(r *http.Request, current string) []usecase.FileBr
 			Public:  b.Public,
 		})
 	}
-	
+
 	return out
 }
 
