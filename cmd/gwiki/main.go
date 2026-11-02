@@ -7,15 +7,15 @@ import (
 	"net/http"
 	"os"
 
-	"github.com/gitwold/gwiki/internal/adapter/git"
-	"github.com/gitwold/gwiki/internal/adapter/html"
-	"github.com/gitwold/gwiki/internal/adapter/httpapi"
-	"github.com/gitwold/gwiki/internal/adapter/i18n"
-	"github.com/gitwold/gwiki/internal/adapter/password"
-	"github.com/gitwold/gwiki/internal/adapter/sqlite"
-	"github.com/gitwold/gwiki/internal/domain"
-	"github.com/gitwold/gwiki/internal/usecase"
-	"github.com/gitwold/gwiki/resources"
+	"magomedcoder.ru/gwiki/internal/adapter/git"
+	"magomedcoder.ru/gwiki/internal/adapter/html"
+	"magomedcoder.ru/gwiki/internal/adapter/httpapi"
+	"magomedcoder.ru/gwiki/internal/adapter/i18n"
+	"magomedcoder.ru/gwiki/internal/adapter/password"
+	"magomedcoder.ru/gwiki/internal/adapter/sqlite"
+	"magomedcoder.ru/gwiki/internal/domain"
+	"magomedcoder.ru/gwiki/internal/usecase"
+	"magomedcoder.ru/gwiki/resources"
 )
 
 func main() {

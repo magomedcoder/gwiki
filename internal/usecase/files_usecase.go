@@ -8,7 +8,7 @@ import (
 	"strings"
 	"unicode/utf8"
 
-	"github.com/gitwold/gwiki/internal/domain"
+	"magomedcoder.ru/gwiki/internal/domain"
 )
 
 const maxTextPreviewBytes = 256 << 10

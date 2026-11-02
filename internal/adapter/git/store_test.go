@@ -6,7 +6,7 @@ import (
 	"path/filepath"
 	"testing"
 
-	"github.com/gitwold/gwiki/internal/domain"
+	"magomedcoder.ru/gwiki/internal/domain"
 )
 
 func TestBranchFilesAndRelocate(t *testing.T) {

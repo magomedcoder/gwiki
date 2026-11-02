@@ -11,10 +11,10 @@ import (
 	"sync"
 	"time"
 
-	"github.com/gitwold/gwiki/internal/domain"
 	"github.com/go-git/go-git/v6"
 	"github.com/go-git/go-git/v6/plumbing"
 	"github.com/go-git/go-git/v6/plumbing/object"
+	"magomedcoder.ru/gwiki/internal/domain"
 )
 
 type Store struct {

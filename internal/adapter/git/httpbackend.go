@@ -6,12 +6,12 @@ import (
 	"net/http"
 	"strings"
 
-	"github.com/gitwold/gwiki/internal/domain"
 	"github.com/go-git/go-git/v6/plumbing"
 	"github.com/go-git/go-git/v6/plumbing/object"
 	"github.com/go-git/go-git/v6/plumbing/storer"
 	"github.com/go-git/go-git/v6/plumbing/transport"
 	"github.com/go-git/go-git/v6/storage"
+	"magomedcoder.ru/gwiki/internal/domain"
 )
 
 type HTTPBackend struct {
@@ -45,7 +45,7 @@ func (b *HTTPBackend) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 			w.Header().Set("Content-Type", "application/x-git-upload-pack-advertisement")
 			w.Header().Set("Cache-Control", "no-cache")
 			w.WriteHeader(http.StatusOK)
-			err := transport.UploadPack(r.Context(), st, nil, wc, &transport.UploadPackOptions{
+			err := transport.UploadPack(r.Context(), st, nil, wc, &transport.UploadPackRequest{
 				GitProtocol:   proto,
 				AdvertiseRefs: true,
 				StatelessRPC:  true,
@@ -57,7 +57,7 @@ func (b *HTTPBackend) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 			w.Header().Set("Content-Type", "application/x-git-receive-pack-advertisement")
 			w.Header().Set("Cache-Control", "no-cache")
 			w.WriteHeader(http.StatusOK)
-			err := transport.ReceivePack(r.Context(), st, nil, wc, &transport.ReceivePackOptions{
+			err := transport.ReceivePack(r.Context(), st, nil, wc, &transport.ReceivePackRequest{
 				GitProtocol:   proto,
 				AdvertiseRefs: true,
 				StatelessRPC:  true,
@@ -73,7 +73,7 @@ func (b *HTTPBackend) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 		w.Header().Set("Content-Type", "application/x-git-upload-pack-result")
 		w.Header().Set("Cache-Control", "no-cache")
 		w.WriteHeader(http.StatusOK)
-		_ = transport.UploadPack(r.Context(), st, body, wc, &transport.UploadPackOptions{
+		_ = transport.UploadPack(r.Context(), st, body, wc, &transport.UploadPackRequest{
 			GitProtocol:  proto,
 			StatelessRPC: true,
 		})
@@ -82,7 +82,7 @@ func (b *HTTPBackend) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 		w.Header().Set("Content-Type", "application/x-git-receive-pack-result")
 		w.Header().Set("Cache-Control", "no-cache")
 		w.WriteHeader(http.StatusOK)
-		_ = transport.ReceivePack(r.Context(), st, body, wc, &transport.ReceivePackOptions{
+		_ = transport.ReceivePack(r.Context(), st, body, wc, &transport.ReceivePackRequest{
 			GitProtocol:  proto,
 			StatelessRPC: true,
 		})

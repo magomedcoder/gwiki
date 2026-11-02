@@ -12,7 +12,7 @@ import (
 	"time"
 	"unicode/utf8"
 
-	"github.com/gitwold/gwiki/internal/domain"
+	"magomedcoder.ru/gwiki/internal/domain"
 )
 
 const (

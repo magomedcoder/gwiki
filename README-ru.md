@@ -1,6 +1,6 @@
 # GWiki - лёгкая система для ведения вики на базе Git
 
-Последняя сборка для Linux: [скачать gwiki](https://github.com/gitwold/gwiki/releases/latest/download/gwiki).
+Последняя сборка для Linux: [скачать gwiki](https://github.com/magomedcoder/gwiki/releases/latest/download/gwiki).
 
 ```bash
 chmod +x gwiki

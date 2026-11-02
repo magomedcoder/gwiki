@@ -7,8 +7,8 @@ import (
 	"sync"
 	"time"
 
-	"github.com/gitwold/gwiki/internal/domain"
-	"github.com/gitwold/gwiki/internal/usecase"
+	"magomedcoder.ru/gwiki/internal/domain"
+	"magomedcoder.ru/gwiki/internal/usecase"
 )
 
 type GitBackend interface {

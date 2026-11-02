@@ -5,8 +5,8 @@ import (
 	"net/http"
 	"strings"
 
-	"github.com/gitwold/gwiki/internal/domain"
-	"github.com/gitwold/gwiki/internal/usecase"
+	"magomedcoder.ru/gwiki/internal/domain"
+	"magomedcoder.ru/gwiki/internal/usecase"
 )
 
 func (h *Handler) users(w http.ResponseWriter, r *http.Request) {

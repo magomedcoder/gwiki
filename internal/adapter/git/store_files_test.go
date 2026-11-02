@@ -4,7 +4,7 @@ import (
 	"context"
 	"testing"
 
-	"github.com/gitwold/gwiki/internal/domain"
+	"magomedcoder.ru/gwiki/internal/domain"
 )
 
 func TestListDirCreateDeleteMove(t *testing.T) {

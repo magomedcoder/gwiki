@@ -9,10 +9,10 @@ import (
 	"os"
 	"strings"
 
-	"github.com/gitwold/gwiki/internal/adapter/sqlite"
-	"github.com/gitwold/gwiki/internal/domain"
-	"github.com/gitwold/gwiki/internal/usecase"
 	"golang.org/x/term"
+	"magomedcoder.ru/gwiki/internal/adapter/sqlite"
+	"magomedcoder.ru/gwiki/internal/domain"
+	"magomedcoder.ru/gwiki/internal/usecase"
 )
 
 func runUser(args []string) error {

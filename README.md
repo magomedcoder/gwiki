@@ -1,6 +1,6 @@
 # GWiki - a lightweight Git-backed wiki
 
-Latest Linux build: [download gwiki](https://github.com/gitwold/gwiki/releases/latest/download/gwiki).
+Latest Linux build: [download gwiki](https://github.com/magomedcoder/gwiki/gwiki/releases/latest/download/gwiki).
 
 ```bash
 chmod +x gwiki

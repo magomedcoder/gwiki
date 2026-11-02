@@ -4,7 +4,7 @@ import (
 	"context"
 	"testing"
 
-	"github.com/gitwold/gwiki/internal/domain"
+	"magomedcoder.ru/gwiki/internal/domain"
 )
 
 func TestFilesBrowseUploadMoveDelete(t *testing.T) {
