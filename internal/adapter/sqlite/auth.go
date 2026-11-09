@@ -6,9 +6,9 @@ import (
 	"strings"
 	"time"
 
+	"github.com/magomedcoder/gwiki/internal/domain"
 	"gorm.io/gorm"
 	"gorm.io/gorm/clause"
-	"magomedcoder.ru/gwiki/internal/domain"
 )
 
 var (

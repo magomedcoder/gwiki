@@ -7,11 +7,11 @@ import (
 	"path/filepath"
 	"time"
 
+	"github.com/magomedcoder/gwiki/internal/domain"
 	"gorm.io/driver/sqlite"
 	"gorm.io/gorm"
 	"gorm.io/gorm/clause"
 	"gorm.io/gorm/logger"
-	"magomedcoder.ru/gwiki/internal/domain"
 )
 
 type Repository struct {

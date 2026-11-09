@@ -7,7 +7,7 @@ import (
 	"strings"
 	"testing"
 
-	"magomedcoder.ru/gwiki/internal/usecase"
+	"github.com/magomedcoder/gwiki/internal/usecase"
 )
 
 func TestFilesPageRequiresAuth(t *testing.T) {

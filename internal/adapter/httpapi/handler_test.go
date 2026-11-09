@@ -8,10 +8,10 @@ import (
 	"testing"
 	"time"
 
-	"magomedcoder.ru/gwiki/internal/adapter/i18n"
-	"magomedcoder.ru/gwiki/internal/domain"
-	"magomedcoder.ru/gwiki/internal/usecase"
-	"magomedcoder.ru/gwiki/resources"
+	"github.com/magomedcoder/gwiki/internal/adapter/i18n"
+	"github.com/magomedcoder/gwiki/internal/domain"
+	"github.com/magomedcoder/gwiki/internal/usecase"
+	"github.com/magomedcoder/gwiki/resources"
 )
 
 func TestAnonymousRedirectAndSecureCookie(t *testing.T) {

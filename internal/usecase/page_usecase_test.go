@@ -7,7 +7,7 @@ import (
 	"strings"
 	"testing"
 
-	"magomedcoder.ru/gwiki/internal/domain"
+	"github.com/magomedcoder/gwiki/internal/domain"
 )
 
 func TestSaveAndViewPage(t *testing.T) {

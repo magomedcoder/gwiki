@@ -6,7 +6,7 @@ import (
 	"strconv"
 	"strings"
 
-	"magomedcoder.ru/gwiki/internal/domain"
+	"github.com/magomedcoder/gwiki/internal/domain"
 )
 
 var (

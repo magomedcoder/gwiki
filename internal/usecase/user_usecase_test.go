@@ -6,7 +6,7 @@ import (
 	"testing"
 	"time"
 
-	"magomedcoder.ru/gwiki/internal/domain"
+	"github.com/magomedcoder/gwiki/internal/domain"
 )
 
 func TestLoginSuccessAndClientBinding(t *testing.T) {

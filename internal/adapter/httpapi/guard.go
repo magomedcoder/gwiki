@@ -7,8 +7,8 @@ import (
 	"net/url"
 	"strings"
 
-	"magomedcoder.ru/gwiki/internal/domain"
-	"magomedcoder.ru/gwiki/internal/usecase"
+	"github.com/magomedcoder/gwiki/internal/domain"
+	"github.com/magomedcoder/gwiki/internal/usecase"
 )
 
 type actorKey struct{}

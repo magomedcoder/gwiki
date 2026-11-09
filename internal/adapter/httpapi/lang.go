@@ -7,7 +7,7 @@ import (
 	"strings"
 	"time"
 
-	"magomedcoder.ru/gwiki/internal/adapter/i18n"
+	"github.com/magomedcoder/gwiki/internal/adapter/i18n"
 )
 
 type langKey struct{}

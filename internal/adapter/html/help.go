@@ -4,8 +4,8 @@ import (
 	"html/template"
 	"net/http"
 
-	"magomedcoder.ru/gwiki/internal/adapter/markdown"
-	"magomedcoder.ru/gwiki/internal/usecase"
+	"github.com/magomedcoder/gwiki/internal/adapter/markdown"
+	"github.com/magomedcoder/gwiki/internal/usecase"
 )
 
 type helpItem struct {

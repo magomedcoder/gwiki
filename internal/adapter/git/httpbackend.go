@@ -11,7 +11,7 @@ import (
 	"github.com/go-git/go-git/v6/plumbing/storer"
 	"github.com/go-git/go-git/v6/plumbing/transport"
 	"github.com/go-git/go-git/v6/storage"
-	"magomedcoder.ru/gwiki/internal/domain"
+	"github.com/magomedcoder/gwiki/internal/domain"
 )
 
 type HTTPBackend struct {

@@ -6,7 +6,7 @@ import (
 	"net/http/httptest"
 	"testing"
 
-	"magomedcoder.ru/gwiki/internal/domain"
+	"github.com/magomedcoder/gwiki/internal/domain"
 )
 
 func TestMediaPrivateDenied(t *testing.T) {

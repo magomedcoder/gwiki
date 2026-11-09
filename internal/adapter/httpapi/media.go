@@ -8,7 +8,7 @@ import (
 	"net/http"
 	"strings"
 
-	"magomedcoder.ru/gwiki/internal/domain"
+	"github.com/magomedcoder/gwiki/internal/domain"
 )
 
 const mediaFormMemory = domain.MaxMediaBytes + 64<<10

@@ -5,8 +5,8 @@ import (
 	"errors"
 	"time"
 
+	"github.com/magomedcoder/gwiki/internal/domain"
 	"gorm.io/gorm"
-	"magomedcoder.ru/gwiki/internal/domain"
 )
 
 var _ domain.BranchRepository = (*Repository)(nil)

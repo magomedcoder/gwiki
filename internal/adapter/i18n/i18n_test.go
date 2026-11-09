@@ -4,7 +4,7 @@ import (
 	"testing"
 	"testing/fstest"
 
-	"magomedcoder.ru/gwiki/resources"
+	"github.com/magomedcoder/gwiki/resources"
 )
 
 func TestLoadAndFallback(t *testing.T) {

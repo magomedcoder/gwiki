@@ -1,4 +1,4 @@
-module magomedcoder.ru/gwiki
+module github.com/magomedcoder/gwiki
 
 go 1.27.3
 

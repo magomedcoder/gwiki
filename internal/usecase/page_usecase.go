@@ -10,7 +10,7 @@ import (
 	"time"
 	"unicode"
 
-	"magomedcoder.ru/gwiki/internal/domain"
+	"github.com/magomedcoder/gwiki/internal/domain"
 )
 
 var ErrIndexSync = errors.New("синхронизация индекса")
